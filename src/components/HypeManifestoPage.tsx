@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Zap, UserCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -8,10 +8,6 @@ interface HypeManifestoPageProps {
 }
 
 const HypeManifestoPage: React.FC<HypeManifestoPageProps> = ({ onOpenModal }) => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     return (
         <div className="min-h-screen bg-black text-white font-space selection:bg-[#CCFF00] selection:text-black">
 
