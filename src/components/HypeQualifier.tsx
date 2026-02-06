@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowRight } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface HypeQualifierProps {
     isOpen: boolean;
@@ -271,15 +271,26 @@ const HypeQualifier: React.FC<HypeQualifierProps> = ({ isOpen, onClose }) => {
                                     style={!isFormValid ? {
                                         backgroundImage: 'repeating-linear-gradient(45deg, #e5e5e5, #e5e5e5 10px, #d4d4d4 10px, #d4d4d4 20px)'
                                     } : {}}
-                                    className={`w-full py-6 md:py-8 font-archivo font-black text-2xl uppercase flex items-center justify-center gap-4 transition-all border-4 border-black mt-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] active:translate-x-1 active:translate-y-1 active:shadow-none ${isFormValid
-                                        ? "bg-black text-white hover:bg-hyper-lime hover:text-black group"
-                                        : "text-neutral-500 cursor-not-allowed opacity-80"
-                                        }`}
+                                    className={`
+                                        w-full py-4 px-6 md:py-8 font-archivo font-black text-xl md:text-2xl uppercase 
+                                        flex items-center justify-center gap-3 transition-all border-4 border-black mt-4 
+                                        shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
+                                        active:translate-y-[2px] active:shadow-none
+                                        ${isFormValid
+                                            ? "bg-hyper-lime text-black hover:bg-black hover:text-white"
+                                            : "text-neutral-500 cursor-not-allowed opacity-80"
+                                        }
+                                    `}
                                 >
                                     {isFormValid ? (
-                                        <>ENVIAR APLICAÇÃO <ArrowRight className="group-hover:translate-x-3 transition-transform" /></>
+                                        <>
+                                            <span>ENVIAR APLICAÇÃO</span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" className="flex-shrink-0">
+                                                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="square" />
+                                            </svg>
+                                        </>
                                     ) : (
-                                        <div className="flex items-center gap-2">
+                                        <div className="flex items-center gap-3">
                                             <span>BLOQUEADO</span>
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"

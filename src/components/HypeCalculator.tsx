@@ -27,13 +27,6 @@ const HypeCalculator: React.FC<HypeCalculatorProps> = ({ onOpenModal }) => {
                 {/* 2. LAYOUT STRUCTURE (Two Columns + Center VS) */}
                 <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-                    {/* --- CENTER "VS" BADGE --- */}
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex items-center justify-center pointer-events-none">
-                        <div className="w-16 h-16 md:w-20 md:h-20 bg-white border-[6px] border-black rounded-full flex items-center justify-center shadow-[0_0_0_8px_black]">
-                            <span className="font-archivo font-black text-xl md:text-2xl text-black">VS</span>
-                        </div>
-                    </div>
-
 
                     {/* --- 3. LEFT CARD: "MODELO ANTIGO" (The Boring Paperwork) --- */}
                     <motion.div
@@ -94,6 +87,12 @@ const HypeCalculator: React.FC<HypeCalculatorProps> = ({ onOpenModal }) => {
 
 
                     {/* --- 4. RIGHT CARD: "MODELO HYPE" (The Cash Machine) --- */}
+                    <div className="relative z-30 mx-auto -my-8 md:absolute md:top-1/2 md:left-1/2 md:my-0 md:-translate-x-1/2 md:-translate-y-1/2 flex items-center justify-center pointer-events-none">
+                        <div className="w-16 h-16 md:w-20 md:h-20 bg-white border-[6px] border-black rounded-full flex items-center justify-center shadow-[0_0_0_8px_black]">
+                            <span className="font-archivo font-black text-xl md:text-2xl text-black">VS</span>
+                        </div>
+                    </div>
+
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}

@@ -109,7 +109,7 @@ const HypeManifestoPage: React.FC<HypeManifestoPageProps> = ({ onOpenModal }) =>
                             initial={{ x: -50, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
                             viewport={{ once: true }}
-                            className="bg-white text-black border-4 border-black p-6 md:p-12 transform -rotate-2 z-20 relative mb-[-2rem] shadow-[8px_8px_0px_0px_#CCFF00] self-start"
+                            className="bg-white text-black border-4 border-black p-6 md:p-12 transform -rotate-2 z-20 relative mb-0 md:mb-[-2rem] shadow-[8px_8px_0px_0px_#CCFF00] self-start"
                         >
                             <h2 className="text-4xl md:text-6xl font-archivo font-black uppercase italic leading-none tracking-tighter">
                                 SEJAM <br /> BEM-VINDOS
@@ -133,7 +133,7 @@ const HypeManifestoPage: React.FC<HypeManifestoPageProps> = ({ onOpenModal }) =>
                             initial={{ y: 50, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             viewport={{ once: true }}
-                            className="bg-[#CCFF00] text-black border-4 border-black p-8 md:p-14 transform -rotate-1 z-40 relative mt-[-3rem] md:max-w-4xl md:ml-auto md:mr-10 shadow-brutal"
+                            className="bg-[#CCFF00] text-black border-4 border-black p-8 md:p-14 transform -rotate-1 z-40 relative mt-8 md:mt-[-3rem] md:max-w-4xl md:ml-auto md:mr-10 shadow-brutal"
                         >
                             <div className="flex items-center gap-4 mb-6 border-b-4 border-black pb-4">
                                 <Zap size={40} className="fill-black" />

@@ -50,10 +50,7 @@ const RealityCheck: React.FC<RealityCheckProps> = ({ onOpenModal }) => {
                 </motion.p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-0 items-center relative">
-                    {/* VS Badge - Hard Shadow - Now visible on mobile between cards */}
-                    <div className="flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-40 w-20 h-20 md:w-28 md:h-28 bg-white border-4 border-black rounded-full items-center justify-center font-archivo text-3xl md:text-5xl shadow-[4px_4px_0px_#000] rotate-12">
-                        VS
-                    </div>
+
 
                     {/* CARD 1: O ANTIGO (Expired/Bureaucratic) */}
                     <motion.div
@@ -88,6 +85,10 @@ const RealityCheck: React.FC<RealityCheckProps> = ({ onOpenModal }) => {
                     </motion.div>
 
                     {/* CARD 2: O NOVO (Vibrant/High Tension) */}
+                    <div className="relative z-40 mx-auto -my-10 md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:my-0 w-20 h-20 md:w-28 md:h-28 bg-white border-4 border-black rounded-full flex items-center justify-center font-archivo text-3xl md:text-5xl shadow-[4px_4px_0px_#000] rotate-12 flex-shrink-0 pointer-events-none">
+                        VS
+                    </div>
+
                     <motion.div
                         initial={{ opacity: 0, rotate: 1, x: 50 }}
                         whileInView={{ opacity: 1, rotate: 4, x: 0 }}

@@ -75,7 +75,7 @@ const HypeSolution: React.FC = () => {
                 </div>
 
                 {/* The "Machine" / Assembly Line Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 relative">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 relative pb-16 md:pb-0">
                     {/* BEEFED UP SVG Arrows for Desktop */}
                     <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
                         {/* ... (SVG path remains same) */}
