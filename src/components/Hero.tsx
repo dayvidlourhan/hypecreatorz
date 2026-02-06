@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { ArrowRight, Zap, Check, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface HeroProps {
     onOpenModal: () => void;
@@ -46,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                 </div>
 
                 <div className="hidden md:flex items-center gap-12 font-bold text-sm">
-                    <a href="#manifesto" className="hover:underline underline-offset-4">MANIFESTO</a>
+                    <Link to="/manifesto" className="hover:underline underline-offset-4">MANIFESTO</Link>
                     <a href="#modelo" className="hover:underline underline-offset-4">O MODELO</a>
                     <a href="#faq" className="hover:underline underline-offset-4">FAQ</a>
                 </div>
@@ -121,9 +122,9 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                         >
                             CRIAR MEU PRODUTO
                         </button>
-                        <a href="#" className="font-space font-bold border-b-4 border-black pb-1 flex items-center justify-center sm:justify-start gap-2 group text-lg md:text-xl uppercase">
+                        <Link to="/manifesto" className="font-space font-bold border-b-4 border-black pb-1 flex items-center justify-center sm:justify-start gap-2 group text-lg md:text-xl uppercase">
                             LER MANIFESTO <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-                        </a>
+                        </Link>
                     </motion.div>
                 </div>
 

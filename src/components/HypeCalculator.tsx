@@ -106,7 +106,7 @@ const HypeCalculator: React.FC<HypeCalculatorProps> = ({ onOpenModal }) => {
                             {/* Header */}
                             <div className="mb-6 flex justify-between items-start border-b-4 border-black pb-4">
                                 <div>
-                                    <span className="bg-black text-white px-2 py-1 text-xs font-bold font-mono uppercase inline-block mb-1">
+                                    <span className="bg-electric-purple text-white px-4 py-1.5 text-xs font-black font-mono uppercase border-4 border-black inline-block mb-2 -rotate-1 shadow-[4px_4px_0px_#000]">
                                         NOVA ERA
                                     </span>
                                     <h3 className="font-archivo font-black text-2xl md:text-3xl text-black uppercase tracking-tight italic">

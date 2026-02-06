@@ -86,7 +86,7 @@ const Window: React.FC<WindowProps> = ({
 
 export const HypeShowcase: React.FC = () => {
     return (
-        <section className="relative py-16 md:py-32 bg-bone overflow-hidden border-t-8 border-black">
+        <section className="relative py-16 md:py-36 bg-bone overflow-hidden border-t-8 border-black">
             {/* Background Decoration: Grid Pattern - Low Opacity */}
             <div className="absolute inset-0 z-0 opacity-5" style={{
                 backgroundImage: 'linear-gradient(#000 2px, transparent 2px), linear-gradient(90deg, #000 2px, transparent 2px)',
@@ -113,10 +113,10 @@ export const HypeShowcase: React.FC = () => {
                 </div>
 
                 {/* Dense Stacked Desktop View / Standard Mobile Column */}
-                <div className="flex flex-col lg:block relative min-h-auto lg:min-h-[750px] space-y-12 lg:space-y-0">
+                <div className="flex flex-col lg:block relative min-h-auto lg:min-h-[850px] space-y-12 lg:space-y-0">
 
                     {/* WINDOW 1: INFOPRODUTO */}
-                    <div className="relative lg:absolute lg:top-0 lg:-left-24 w-full lg:w-[550px] rotate-0 lg:rotate-[-6deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-20">
+                    <div className="relative lg:absolute lg:top-0 lg:left-6 w-full lg:w-[480px] xl:w-[540px] rotate-0 lg:rotate-[-3deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-20">
                         <Window
                             title="COMMUNITY_V1.exe"
                             headerColor="#6600FF"
@@ -126,25 +126,25 @@ export const HypeShowcase: React.FC = () => {
                         />
                     </div>
 
-                    {/* WINDOW 2: FÍSICO */}
-                    <div className="relative lg:absolute lg:top-28 lg:left-1/2 lg:-translate-x-1/2 w-full lg:w-[520px] rotate-0 lg:rotate-[4deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-40">
-                        <Window
-                            title="DROP_SUPPLEMENT.dmg"
-                            headerColor="#CCFF00"
-                            textColor="text-black"
-                            footerText="Suplementos, Merch & Skincare."
-                            icon={<Package className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={3} />}
-                        />
-                    </div>
-
                     {/* WINDOW 3: TECH/APPS */}
-                    <div className="relative lg:absolute lg:top-12 lg:-right-24 w-full lg:w-[580px] rotate-0 lg:rotate-[6deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-30">
+                    <div className="relative lg:absolute lg:top-32 lg:right-6 w-full lg:w-[500px] xl:w-[560px] rotate-0 lg:rotate-[3deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-30">
                         <Window
                             title="SAAS_LAUNCHER.bat"
                             headerColor="#000000"
                             textColor="text-white"
                             footerText="Apps, Presets & Ferramentas Digitais."
                             icon={<Cpu className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={3} />}
+                        />
+                    </div>
+
+                    {/* WINDOW 2: FÍSICO */}
+                    <div className="relative lg:absolute lg:top-64 lg:left-1/2 lg:-translate-x-1/2 w-full lg:w-[460px] xl:w-[520px] rotate-0 lg:rotate-[2deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-40">
+                        <Window
+                            title="DROP_SUPPLEMENT.dmg"
+                            headerColor="#CCFF00"
+                            textColor="text-black"
+                            footerText="Suplementos, Merch & Skincare."
+                            icon={<Package className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={3} />}
                         />
                     </div>
 

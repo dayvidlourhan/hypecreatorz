@@ -63,9 +63,11 @@ const RealityCheck: React.FC<RealityCheckProps> = ({ onOpenModal }) => {
                         transition={{ delay: 0.4, type: "spring", damping: 15 }}
                         className="bg-neutral-200 border-4 border-black p-6 md:p-14 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.4)] relative z-10 grayscale-[0.5]"
                     >
-                        <div className="mb-8 md:mb-10 font-archivo">
-                            <span className="text-[10px] md:text-sm font-space font-bold opacity-60 uppercase tracking-[0.3em]">SYSTEM ERROR_01</span>
-                            <h3 className="text-3xl md:text-6xl mt-2 tracking-tight opacity-80 text-neutral-500">MODELO PUBLI</h3>
+                        <div className="mb-8 md:mb-10">
+                            <span className="inline-block bg-[#FF0033] text-white text-[13px] md:text-base font-mono font-bold px-6 py-2 border-4 border-black uppercase tracking-tight mb-3 -rotate-2 shadow-[6px_6px_0px_#000]">
+                                SYSTEM_ERROR_01
+                            </span>
+                            <h3 className="text-3xl md:text-6xl font-archivo font-black tracking-tighter opacity-80 text-neutral-500 leading-none">MODELO PUBLI</h3>
                         </div>
 
                         <ul className="space-y-6 md:space-y-8 font-space text-lg md:text-2xl">
@@ -102,9 +104,11 @@ const RealityCheck: React.FC<RealityCheckProps> = ({ onOpenModal }) => {
                             <Zap className="w-8 h-8 md:w-12 md:h-12 fill-black" />
                         </motion.div>
 
-                        <div className="mb-8 md:mb-10 font-archivo">
-                            <span className="text-[10px] md:text-sm font-space font-bold text-black uppercase tracking-[0.3em]">NEW ERA_2026</span>
-                            <h3 className="text-3xl md:text-7xl mt-2 tracking-tighter">HYPE CREATORZ</h3>
+                        <div className="mb-8 md:mb-10">
+                            <span className="inline-block bg-[#7C3AED] text-white text-[13px] md:text-base font-mono font-bold px-6 py-2 border-4 border-black uppercase tracking-tight mb-3 -rotate-2 shadow-[6px_6px_0px_#000]">
+                                NEW_ERA_2026
+                            </span>
+                            <h3 className="text-3xl md:text-7xl font-archivo font-black tracking-tighter italic leading-none">HYPE CREATORZ</h3>
                         </div>
 
                         <ul className="space-y-6 md:space-y-8 font-space text-lg md:text-3xl font-black">

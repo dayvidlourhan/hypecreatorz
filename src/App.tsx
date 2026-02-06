@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Obrigado from './components/Obrigado'
 import HypeQualifier from './components/HypeQualifier'
+import HypeManifestoPage from './components/HypeManifestoPage'
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,6 +17,9 @@ function App() {
         <Routes>
           {/* Main Landing Page Route */}
           <Route path="/" element={<Home onOpenModal={openModal} />} />
+
+          {/* Manifesto Page Route */}
+          <Route path="/manifesto" element={<HypeManifestoPage onOpenModal={openModal} />} />
 
           {/* Thank You Page Route */}
           <Route path="/obrigado" element={<Obrigado />} />
