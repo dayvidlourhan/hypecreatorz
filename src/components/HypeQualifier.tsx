@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowRight, Lock } from 'lucide-react';
+import { X, ArrowRight } from 'lucide-react';
 
 interface HypeQualifierProps {
     isOpen: boolean;
