@@ -17,6 +17,7 @@ export default {
       fontFamily: {
         archivo: ['"Archivo Black"', 'sans-serif'],
         space: ['"Space Mono"', 'monospace'],
+        clash: ['"Clash Display"', 'sans-serif'],
       },
       boxShadow: {
         brutal: '6px 6px 0px 0px #000000',

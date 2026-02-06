@@ -2,7 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { X, Zap, Check, ArrowRight } from 'lucide-react';
 
-const RealityCheck: React.FC = () => {
+interface RealityCheckProps {
+    onOpenModal: () => void;
+}
+
+const RealityCheck: React.FC<RealityCheckProps> = ({ onOpenModal }) => {
     return (
         <section className="relative py-16 md:py-24 px-4 md:px-12 bg-bone border-t-4 border-black overflow-hidden selection:bg-black selection:text-hyper-lime">
             {/* Background Accent - Fragmented Geometry */}
@@ -123,9 +127,10 @@ const RealityCheck: React.FC = () => {
                         </ul>
 
                         <motion.button
+                            onClick={onOpenModal}
                             whileHover={{ scale: 1.02, x: 4, y: 4 }}
                             whileTap={{ scale: 0.98 }}
-                            className="mt-12 md:mt-16 w-full bg-black text-white py-6 md:py-8 font-archivo text-xl md:text-3xl border-4 border-black shadow-[8px_8px_0px_0px_#FF0033] hover:shadow-none transition-all flex items-center justify-center gap-4 md:gap-6"
+                            className="cursor-pointer mt-12 md:mt-16 w-full bg-black text-white py-6 md:py-8 font-archivo text-xl md:text-3xl border-4 border-black shadow-[8px_8px_0px_0px_#FF0033] hover:shadow-none transition-all flex items-center justify-center gap-4 md:gap-6"
                         >
                             DOMINE O JOGO <ArrowRight className="w-6 h-6 md:w-8 md:h-8" />
                         </motion.button>

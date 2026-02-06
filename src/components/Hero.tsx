@@ -3,7 +3,11 @@ import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { ArrowRight, Zap, Check, Star } from 'lucide-react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+    onOpenModal: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
     const marqueeVariants: Variants = {
         animate: {
             x: [0, -1000],
@@ -48,7 +52,10 @@ const Hero: React.FC = () => {
                     <a href="#" className="hover:underline underline-offset-4">ENTRAR</a>
                 </div>
 
-                <button className="brutal-btn bg-black text-white font-archivo px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 text-xs md:text-sm uppercase">
+                <button
+                    onClick={onOpenModal}
+                    className="brutal-btn bg-black text-white font-archivo px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 text-xs md:text-sm uppercase"
+                >
                     INICIAR <Zap size={14} className="fill-hyper-lime text-hyper-lime" />
                 </button>
             </nav>
@@ -63,7 +70,10 @@ const Hero: React.FC = () => {
                     animate={{ scale: 1, rotate: -15 }}
                     transition={{ type: "spring", damping: 10, delay: 1 }}
                 >
-                    <div className="w-16 h-16 md:w-32 md:h-32 bg-electric-purple text-white brutal-border rounded-full flex items-center justify-center font-archivo text-xs md:text-2xl shadow-brutal text-center leading-none p-2 md:p-4 transform hover:scale-110 transition-transform cursor-pointer">
+                    <div
+                        onClick={onOpenModal}
+                        className="w-16 h-16 md:w-32 md:h-32 bg-electric-purple text-white brutal-border rounded-full flex items-center justify-center font-archivo text-xs md:text-2xl shadow-brutal text-center leading-none p-2 md:p-4 transform hover:scale-110 transition-transform cursor-pointer"
+                    >
                         AI <br className="hidden md:block" /> FIRST
                     </div>
                 </motion.div>
@@ -106,7 +116,10 @@ const Hero: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.8, duration: 0.5 }}
                     >
-                        <button className="brutal-btn bg-hyper-lime text-black text-xl md:text-2xl font-archivo px-8 md:px-12 py-4 md:py-5 uppercase leading-none">
+                        <button
+                            onClick={onOpenModal}
+                            className="brutal-btn bg-hyper-lime text-black text-xl md:text-2xl font-archivo px-8 md:px-12 py-4 md:py-5 uppercase leading-none"
+                        >
                             CRIAR MEU PRODUTO
                         </button>
                         <a href="#" className="font-space font-bold border-b-4 border-black pb-1 flex items-center justify-center sm:justify-start gap-2 group text-lg md:text-xl uppercase">

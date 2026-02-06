@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion';
 import { Instagram, Twitter, Youtube, ArrowRight } from 'lucide-react';
 
-const HypeFooter = () => {
+interface HypeFooterProps {
+    onOpenModal?: () => void;
+}
+
+const HypeFooter: React.FC<HypeFooterProps> = ({ onOpenModal }) => {
     return (
         <footer className="bg-black text-white selection:bg-hyper-lime selection:text-black">
             {/* PART A: THE FINAL CTA */}
@@ -28,6 +32,7 @@ const HypeFooter = () => {
                     </motion.p>
 
                     <motion.button
+                        onClick={onOpenModal}
                         className="group relative w-full md:w-auto bg-hyper-lime text-black font-archivo text-xl md:text-4xl px-8 md:px-12 py-5 md:py-7 flex items-center justify-center gap-4 border-4 border-black transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_#ffffff20] italic"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}

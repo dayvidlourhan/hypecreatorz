@@ -1,7 +1,11 @@
 import { Terminal, Calculator } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const HypeCalculator = () => {
+interface HypeCalculatorProps {
+    onOpenModal?: () => void;
+}
+
+const HypeCalculator: React.FC<HypeCalculatorProps> = ({ onOpenModal }) => {
     return (
         <section className="bg-black py-16 md:py-24 px-4 font-space relative overflow-hidden">
             {/* 1. BACKGROUND TEXTURE (SUBTLE CYBERPUNK GRID) */}
@@ -140,6 +144,7 @@ const HypeCalculator = () => {
                     <motion.button
                         whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={onOpenModal}
                         className="group relative bg-hyper-lime text-black px-8 md:px-14 py-5 md:py-8 text-xl md:text-3xl font-archivo border-4 border-black shadow-[6px_6px_0px_0px_rgba(255,255,255,0.2)] md:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none transition-all uppercase"
                     >
                         <span className="relative z-10">ESCALE AGORA</span>

@@ -37,7 +37,11 @@ const FAQItem = ({ question, answer, isOpen, onClick }: any) => {
     );
 };
 
-const HypeFAQ = () => {
+interface HypeFAQProps {
+    onOpenModal?: () => void;
+}
+
+const HypeFAQ: React.FC<HypeFAQProps> = ({ onOpenModal }) => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     const faqs = [
@@ -88,7 +92,10 @@ const HypeFAQ = () => {
 
                 {/* Brutalism CTA centered and inverted */}
                 <div className="mt-12 md:mt-20 flex justify-center">
-                    <button className="brutal-btn bg-black text-white px-8 md:px-10 py-5 md:py-6 font-archivo text-xl md:text-4xl hover:bg-hyper-lime hover:text-black transition-colors group uppercase italic">
+                    <button
+                        onClick={onOpenModal}
+                        className="brutal-btn bg-black text-white px-8 md:px-10 py-5 md:py-6 font-archivo text-xl md:text-4xl hover:bg-hyper-lime hover:text-black transition-colors group uppercase italic"
+                    >
                         AINDA TEM DÚVIDA?
                         <span className="hidden group-hover:inline ml-4">→</span>
                     </button>

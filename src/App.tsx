@@ -1,43 +1,32 @@
-import { lazy, Suspense } from 'react'
-import Hero from './components/Hero'
-
-// Lazy loaded sections for optimized performance (Core Web Vitals)
-const RealityCheck = lazy(() => import('./components/RealityCheck'))
-const HypeSolution = lazy(() => import('./components/HypeSolution'))
-const HypeShowcase = lazy(() => import('./components/HypeShowcase'))
-const HypeCalculator = lazy(() => import('./components/HypeCalculator'))
-const HypeRoadmap = lazy(() => import('./components/HypeRoadmap'))
-const HypeFAQ = lazy(() => import('./components/HypeFAQ'))
-const HypeFooter = lazy(() => import('./components/HypeFooter'))
-
-/**
- * Minimalist Acid Green Loading Spinner
- * Adheres to HYPECREATZ premium industrial aesthetic
- */
-const LoadingSpinner = () => (
-  <div className="flex h-32 w-full items-center justify-center bg-black">
-    <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#CCFF00] border-t-transparent" />
-  </div>
-)
+import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
+import Obrigado from './components/Obrigado'
+import HypeQualifier from './components/HypeQualifier'
 
 function App() {
-  return (
-    <main id="hypecreators-root" className="min-h-screen bg-black overflow-x-hidden">
-      {/* Hero must load instantly for LCP optimization */}
-      <Hero />
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-      {/* Everything below the fold is lazy loaded to minimize initial JS execution */}
-      <Suspense fallback={<LoadingSpinner />}>
-        <RealityCheck />
-        <HypeSolution />
-        <HypeShowcase />
-        <HypeCalculator />
-        <HypeRoadmap />
-        <HypeFAQ />
-        <HypeFooter />
-      </Suspense>
-    </main>
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  return (
+    <BrowserRouter>
+      <main id="hypecreators-root" className="min-h-screen bg-black overflow-x-hidden">
+        <Routes>
+          {/* Main Landing Page Route */}
+          <Route path="/" element={<Home onOpenModal={openModal} />} />
+
+          {/* Thank You Page Route */}
+          <Route path="/obrigado" element={<Obrigado />} />
+        </Routes>
+
+        {/* Global Components */}
+        <HypeQualifier isOpen={isModalOpen} onClose={closeModal} />
+      </main>
+    </BrowserRouter>
   )
 }
 
 export default App
+
