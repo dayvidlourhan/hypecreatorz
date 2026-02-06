@@ -45,18 +45,17 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                     HYPECREATORZ
                 </div>
 
-                <div className="hidden md:flex items-center gap-8 font-bold text-sm">
-                    <a href="#" className="hover:underline underline-offset-4">MANIFESTO</a>
-                    <a href="#" className="hover:underline underline-offset-4">CRIADORES</a>
-                    <a href="#" className="hover:underline underline-offset-4">PRODUTOS</a>
-                    <a href="#" className="hover:underline underline-offset-4">ENTRAR</a>
+                <div className="hidden md:flex items-center gap-12 font-bold text-sm">
+                    <a href="#manifesto" className="hover:underline underline-offset-4">MANIFESTO</a>
+                    <a href="#modelo" className="hover:underline underline-offset-4">O MODELO</a>
+                    <a href="#faq" className="hover:underline underline-offset-4">FAQ</a>
                 </div>
 
                 <button
                     onClick={onOpenModal}
                     className="brutal-btn bg-black text-white font-archivo px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 text-xs md:text-sm uppercase"
                 >
-                    INICIAR <Zap size={14} className="fill-hyper-lime text-hyper-lime" />
+                    APLICAR <Zap size={14} className="fill-hyper-lime text-hyper-lime" />
                 </button>
             </nav>
 
@@ -74,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                         onClick={onOpenModal}
                         className="w-16 h-16 md:w-32 md:h-32 bg-electric-purple text-white brutal-border rounded-full flex items-center justify-center font-archivo text-xs md:text-2xl shadow-brutal text-center leading-none p-2 md:p-4 transform hover:scale-110 transition-transform cursor-pointer"
                     >
-                        AI <br className="hidden md:block" /> FIRST
+                        ZERO <br className="hidden md:block" /> OPS
                     </div>
                 </motion.div>
 
@@ -86,7 +85,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                         transition={{ duration: 0.5 }}
                     >
                         <span className="bg-black text-white font-space px-3 py-1 text-xs md:text-sm tracking-widest uppercase">
-                            🚀 PRODUCT STUDIO AI-FIRST
+                            ⚡ INFRAESTRUTURA DE EQUITY
                         </span>
                     </motion.div>
 
@@ -192,8 +191,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                             </div>
 
                             {/* Card Footer Text */}
-                            <div className="border-t-2 border-black/10 pt-3 md:pt-4 font-space text-[8px] md:text-[10px] leading-tight opacity-60 uppercase">
-                                Product studio powered by AI // Full-stack ownership // Zero publi dependency
+                            <div className="border-t-2 border-black/10 pt-3 md:pt-4 font-space text-[10px] md:text-xs font-medium leading-tight opacity-80 uppercase">
+                                OWNERSHIP IS THE NEW CLOUT // CHEGA DE ALUGAR SUA AUDIÊNCIA
                             </div>
                         </motion.div>
 

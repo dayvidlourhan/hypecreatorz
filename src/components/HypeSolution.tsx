@@ -58,13 +58,13 @@ const HypeSolution: React.FC = () => {
                     {/* REPOSITIONED STICKER - Floating between Header and Cards */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-                        whileInView={{ opacity: 1, scale: 1, rotate: -15 }}
+                        whileInView={{ opacity: 1, scale: 1, rotate: -12 }}
                         viewport={{ once: true }}
-                        className="relative mt-4 md:mt-0 md:mb-12"
+                        className="relative mt-8 md:mt-0 md:mb-8 md:-ml-16 z-20"
                     >
                         <div className="relative">
                             <div className="absolute inset-0 bg-electric-purple blur-2xl opacity-40 animate-pulse"></div>
-                            <div className="relative bg-electric-purple text-white border-[6px] border-black px-6 md:px-8 py-6 md:py-8 shadow-[8px_8px_0px_#000] md:shadow-[12px_12px_0px_#000] rotate-[-15deg] flex flex-col items-center justify-center gap-2 transform hover:rotate-0 transition-transform">
+                            <div className="relative bg-electric-purple text-white border-[6px] border-black px-6 md:px-8 py-6 md:py-8 shadow-[8px_8px_0px_#000] md:shadow-[12px_12px_0px_#000] rotate-[-12deg] flex flex-col items-center justify-center gap-2 transform hover:rotate-0 transition-transform">
                                 <motion.div animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }}>
                                     <Star fill="white" className="w-8 h-8 md:w-10 md:h-10" />
                                 </motion.div>
@@ -132,18 +132,22 @@ const HypeSolution: React.FC = () => {
                         >
                             {/* Icon Container with PURPLE FILL & BLACK ICON */}
                             <div className={`${card.color} w-16 h-16 md:w-24 md:h-24 border-[4px] md:border-[6px] border-black mb-8 md:mb-10 flex items-center justify-center rotate-[-4deg] group-hover:rotate-0 transition-transform shadow-[4px_4px_0px_#000] md:shadow-[8px_8px_0px_#000]`}>
-                                <card.icon className="w-8 h-8 md:w-10 md:h-10 text-black" strokeWidth={2.5} />
+                                <div className="p-3">
+                                    <card.icon
+                                        size={40}
+                                        className="text-black w-8 h-8 md:w-10 md:h-10"
+                                        strokeWidth={2.5}
+                                    />
+                                </div>
                             </div>
 
                             <h3 className="text-3xl md:text-4xl font-archivo mb-4 md:mb-6 tracking-tighter group-hover:text-electric-purple transition-colors">
                                 {card.title}
                             </h3>
 
-                            <p className="text-lg md:text-xl font-space leading-tight font-bold opacity-80 uppercase">
+                            <p className="text-base md:text-lg font-space leading-relaxed font-bold text-black">
                                 {card.text}
                             </p>
-
-
 
                             {/* Sequential Number Badge */}
                             <div className="absolute -bottom-6 md:-bottom-8 -right-6 md:-right-8 w-12 h-12 md:w-16 md:h-16 bg-black text-hyper-lime border-[4px] md:border-[6px] border-black flex items-center justify-center font-archivo text-base md:text-xl">

@@ -4,7 +4,9 @@ import { Plus, Minus } from 'lucide-react';
 const FAQItem = ({ question, answer, isOpen, onClick }: any) => {
     return (
         <div
-            className={`group mb-4 md:mb-6 border-4 border-black transition-all duration-300 ${isOpen ? 'bg-hyper-lime translate-x-1 translate-y-1 shadow-brutal-hover' : 'bg-white shadow-brutal'
+            className={`group mb-4 md:mb-6 border-4 border-black transition-all duration-300 ${isOpen
+                ? 'bg-hyper-lime translate-x-1 translate-y-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                : 'bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]'
                 }`}
         >
             <button
@@ -16,6 +18,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }: any) => {
                         {question}
                     </span>
                 </div>
+                {/* Structural Beam Divider */}
                 <div className={`w-14 md:w-24 flex-shrink-0 border-l-4 border-black flex items-center justify-center transition-colors duration-300 ${isOpen ? 'bg-black/5' : 'bg-transparent'}`}>
                     {isOpen ? (
                         <Minus className="w-6 h-6 md:w-10 md:h-10 text-black stroke-[3]" />
@@ -29,7 +32,8 @@ const FAQItem = ({ question, answer, isOpen, onClick }: any) => {
                 className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 border-t-4 border-black' : 'max-h-0'
                     }`}
             >
-                <div className="p-6 md:p-12 font-space text-lg md:text-2xl leading-tight font-medium text-black uppercase">
+                {/* Monospace Answer: The "Data" Look */}
+                <div className="p-6 md:p-8 font-mono text-lg md:text-xl font-bold leading-relaxed text-black uppercase">
                     {answer}
                 </div>
             </div>
@@ -64,7 +68,7 @@ const HypeFAQ: React.FC<HypeFAQProps> = ({ onOpenModal }) => {
     ];
 
     return (
-        <section className="bg-bone py-16 md:py-24 px-4 md:px-12 relative overflow-hidden">
+        <section id="faq" className="bg-bone py-16 md:py-24 px-4 md:px-12 relative overflow-hidden">
             {/* Background Decorativo com Pontos */}
             <div className="absolute inset-0 bg-dots opacity-40 pointer-events-none" />
 
@@ -90,19 +94,20 @@ const HypeFAQ: React.FC<HypeFAQProps> = ({ onOpenModal }) => {
                     ))}
                 </div>
 
-                {/* Brutalism CTA centered and inverted */}
+                {/* Digital Switch CTA Button */}
                 <div className="mt-12 md:mt-20 flex justify-center">
                     <button
                         onClick={onOpenModal}
-                        className="brutal-btn bg-black text-white px-8 md:px-10 py-5 md:py-6 font-archivo text-xl md:text-4xl hover:bg-hyper-lime hover:text-black transition-colors group uppercase italic"
+                        className="bg-black text-hyper-lime border-4 border-black px-8 md:px-12 py-4 md:py-6 font-archivo text-xl md:text-4xl transition-all duration-200 ease-in-out hover:bg-hyper-lime hover:text-black group uppercase italic flex items-center justify-center gap-4"
                     >
-                        AINDA TEM DÚVIDA?
-                        <span className="hidden group-hover:inline ml-4">→</span>
+                        <span>AINDA TEM DÚVIDA?</span>
+                        <span className="transition-transform duration-200 ease-in-out group-hover:translate-x-2">
+                            →
+                        </span>
                     </button>
                 </div>
             </div>
         </section>
-
     );
 };
 

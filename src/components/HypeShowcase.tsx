@@ -22,8 +22,6 @@ const Window: React.FC<WindowProps> = ({
         <div className={`
       bg-white border-4 border-black 
       shadow-[4px_4px_0px_#000] md:shadow-[8px_8px_0px_0px_#000] 
-      transition-all duration-300 ease-in-out
-      hover:scale-105 hover:z-50 hover:shadow-[12px_12px_0px_#000] md:hover:shadow-[16px_16px_0px_0px_#000]
       ${className}
     `}>
             {/* Top Bar */}
@@ -77,8 +75,8 @@ const Window: React.FC<WindowProps> = ({
                     <div className="absolute inset-0 bg-black/0 group-hover/visual:bg-black/5 transition-colors pointer-events-none" />
                 </div>
 
-                {/* Footer Text */}
-                <p className="font-space text-base md:text-xl font-black uppercase text-black leading-tight">
+                {/* Footer Text - Updated Typography */}
+                <p className="font-space text-xs md:text-sm font-bold uppercase text-black leading-tight tracking-tight">
                     {footerText}
                 </p>
             </div>
@@ -88,17 +86,17 @@ const Window: React.FC<WindowProps> = ({
 
 export const HypeShowcase: React.FC = () => {
     return (
-        <section className="relative py-16 md:py-40 bg-bone overflow-hidden border-t-8 border-black">
-            {/* Background Decoration: Grid Pattern */}
-            <div className="absolute inset-0 z-0 opacity-10" style={{
+        <section className="relative py-16 md:py-32 bg-bone overflow-hidden border-t-8 border-black">
+            {/* Background Decoration: Grid Pattern - Low Opacity */}
+            <div className="absolute inset-0 z-0 opacity-5" style={{
                 backgroundImage: 'linear-gradient(#000 2px, transparent 2px), linear-gradient(90deg, #000 2px, transparent 2px)',
-                backgroundSize: '30px 30px md:60px 60px'
+                backgroundSize: '30px 30px'
             }} />
 
-            {/* Heavy Cross Marks */}
-            <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{
+            {/* Heavy Cross Marks - Lower Opacity (10%) */}
+            <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23000' stroke-width='3'%3E%3Cpath d='M50 40v20M40 50h20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                backgroundSize: '100px 100px md:200px 200px'
+                backgroundSize: '100px 100px'
             }} />
 
             <div className="container mx-auto px-4 relative z-10">
@@ -115,52 +113,51 @@ export const HypeShowcase: React.FC = () => {
                 </div>
 
                 {/* Dense Stacked Desktop View / Standard Mobile Column */}
-                <div className="flex flex-col lg:block relative min-h-auto lg:min-h-[900px] space-y-12 lg:space-y-0">
+                <div className="flex flex-col lg:block relative min-h-auto lg:min-h-[750px] space-y-12 lg:space-y-0">
 
                     {/* WINDOW 1: INFOPRODUTO */}
-                    <div className="relative lg:absolute lg:top-0 lg:left-0 w-full lg:w-[550px] rotate-0 lg:rotate-[-2deg] hover:rotate-0 hover:z-50 z-20">
+                    <div className="relative lg:absolute lg:top-0 lg:-left-24 w-full lg:w-[550px] rotate-0 lg:rotate-[-6deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-20">
                         <Window
                             title="COMMUNITY_V1.exe"
                             headerColor="#6600FF"
                             textColor="text-white"
                             footerText="Comunidades Premium & Mentorias."
-                            icon={<Users className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={2.5} />}
+                            icon={<Users className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={3} />}
                         />
                     </div>
 
-                    {/* WINDOW 2: FÍSICO - Centered and Overlapping */}
-                    <div className="relative lg:absolute lg:top-32 lg:left-1/2 lg:-translate-x-1/2 w-full lg:w-[520px] rotate-0 lg:rotate-[3deg] hover:rotate-0 hover:z-50 z-40">
+                    {/* WINDOW 2: FÍSICO */}
+                    <div className="relative lg:absolute lg:top-28 lg:left-1/2 lg:-translate-x-1/2 w-full lg:w-[520px] rotate-0 lg:rotate-[4deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-40">
                         <Window
                             title="DROP_SUPPLEMENT.dmg"
                             headerColor="#CCFF00"
                             textColor="text-black"
                             footerText="Suplementos, Merch & Skincare."
-                            icon={<Package className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={2.5} />}
+                            icon={<Package className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={3} />}
                         />
                     </div>
 
-                    {/* WINDOW 3: TECH/APPS - Bottom and Overlapping */}
-                    <div className="relative lg:absolute lg:bottom-0 lg:right-0 w-full lg:w-[580px] rotate-0 lg:rotate-[-3deg] hover:rotate-0 hover:z-50 z-30">
+                    {/* WINDOW 3: TECH/APPS */}
+                    <div className="relative lg:absolute lg:top-12 lg:-right-24 w-full lg:w-[580px] rotate-0 lg:rotate-[6deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-30">
                         <Window
                             title="SAAS_LAUNCHER.bat"
                             headerColor="#000000"
                             textColor="text-white"
                             footerText="Apps, Presets & Ferramentas Digitais."
-                            icon={<Cpu className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={2.5} />}
+                            icon={<Cpu className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={3} />}
                         />
                     </div>
 
                 </div>
             </div>
 
-            {/* Decorative Floating Symbols */}
+            {/* Decorative Floating Sticker - UPDATED */}
             <div className="absolute top-20 right-20 animate-bounce hidden xl:block">
-                <div className="bg-hyper-lime border-4 border-black p-4 rotate-12 shadow-[8px_8px_0px_0px_#000] font-archivo text-4xl">
-                    V1.0
+                <div className="bg-hyper-lime border-4 border-black p-4 rotate-12 shadow-[8px_8px_0px_0px_#000] font-archivo font-bold italic text-4xl">
+                    HIGH TICKET
                 </div>
             </div>
         </section>
-
     );
 };
 

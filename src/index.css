@@ -17,6 +17,10 @@
     /* Firefox */
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-bone text-black font-space;
   }

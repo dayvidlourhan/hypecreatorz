@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowRight, Loader2 } from 'lucide-react';
+import { X, ArrowRight, Lock } from 'lucide-react';
 
 interface HypeQualifierProps {
     isOpen: boolean;
@@ -173,11 +173,11 @@ const HypeQualifier: React.FC<HypeQualifierProps> = ({ isOpen, onClose }) => {
                     exit={{ scale: 0.9, y: 20, opacity: 0 }}
                     className="relative max-w-lg w-full bg-white border-4 border-black shadow-[8px_8px_0px_0px_#CCFF00] p-8 md:p-12 overflow-hidden"
                 >
-                    {/* Part 1: Close Button wrapped in square */}
+                    {/* Part 4: Close Button - Square treatments */}
                     {!isSubmitting && (
                         <div
                             onClick={onClose}
-                            className="absolute top-4 right-4 w-10 h-10 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors bg-white z-10 cursor-pointer"
+                            className="absolute top-4 right-4 w-10 h-10 border-2 border-black flex items-center justify-center transition-colors bg-white z-10 cursor-pointer hover:bg-black hover:text-white group"
                         >
                             <X size={20} strokeWidth={3} />
                         </div>
@@ -187,17 +187,27 @@ const HypeQualifier: React.FC<HypeQualifierProps> = ({ isOpen, onClose }) => {
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            className="py-16 md:py-24 flex flex-col items-center justify-center gap-6"
+                            className="py-16 md:py-24 flex flex-col items-center justify-center gap-8"
                         >
-                            <Loader2 size={64} className="animate-spin text-hyper-lime" />
-                            <h3 className="font-archivo text-2xl uppercase text-center animate-pulse">
-                                ANALISANDO PERFIL...
-                            </h3>
+                            <div className="w-full space-y-4 text-center">
+                                <h3 className="font-archivo text-2xl uppercase font-black italic tracking-tighter">
+                                    ANALISANDO PERFIL...
+                                </h3>
+                                {/* Part 3: Progress Bar Loader (Option B) */}
+                                <div className="w-full bg-neutral-100 border-2 border-black h-4 relative overflow-hidden">
+                                    <motion.div
+                                        initial={{ width: "0%" }}
+                                        animate={{ width: "100%" }}
+                                        transition={{ duration: 2, ease: "linear" }}
+                                        className="h-full bg-hyper-lime"
+                                    />
+                                </div>
+                            </div>
                         </motion.div>
                     ) : (
                         <div className="flex flex-col gap-8 md:gap-10">
-                            <div className="space-y-3">
-                                <h1 className="text-4xl md:text-5xl font-archivo leading-[0.9] uppercase tracking-tighter">
+                            <div className="space-y-3 text-center md:text-left">
+                                <h1 className="text-4xl md:text-5xl font-archivo leading-[0.9] uppercase tracking-tighter font-black italic">
                                     ENTRAR NO <span className="bg-hyper-lime px-2 border-2 border-black">JOGO</span>
                                 </h1>
                                 <p className="font-mono text-xs md:text-sm uppercase font-bold opacity-60 tracking-wider">
@@ -206,63 +216,88 @@ const HypeQualifier: React.FC<HypeQualifierProps> = ({ isOpen, onClose }) => {
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-6">
-                                {/* SEU NOME */}
+                                {/* Part 1: Input Fields (Heavy Duty) */}
                                 <div className="flex flex-col">
-                                    <label className="font-bold uppercase tracking-wide text-sm mb-2">SEU NOME</label>
+                                    <label className="font-bold uppercase tracking-wide text-xs mb-2">SEU NOME</label>
                                     <input
                                         type="text"
                                         required
                                         placeholder="NOME COMPLETO"
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        className="h-14 py-4 px-5 border-2 border-black rounded-none font-archivo text-lg focus:outline-none focus:border-hyper-lime focus:ring-1 focus:ring-hyper-lime uppercase"
+                                        className="h-14 py-4 px-5 border-2 border-black rounded-none font-mono font-bold text-lg outline-none focus:border-[#CCFF00] focus:shadow-[4px_4px_0px_black] uppercase transition-all"
                                     />
                                 </div>
 
-                                {/* SEU NÚMERO */}
                                 <div className="flex flex-col">
-                                    <label className="font-bold uppercase tracking-wide text-sm mb-2">SEU NÚMERO (COM DDD)</label>
+                                    <label className="font-bold uppercase tracking-wide text-xs mb-2">SEU NÚMERO (COM DDD)</label>
                                     <input
                                         type="tel"
                                         required
                                         placeholder="(XX) X XXXX-XXXX"
                                         value={formData.phone}
                                         onChange={handlePhoneChange}
-                                        className="h-14 py-4 px-5 border-2 border-black rounded-none font-archivo text-lg focus:outline-none focus:border-hyper-lime focus:ring-1 focus:ring-hyper-lime"
+                                        className="h-14 py-4 px-5 border-2 border-black rounded-none font-mono font-bold text-lg outline-none focus:border-[#CCFF00] focus:shadow-[4px_4px_0px_black] transition-all"
                                     />
                                 </div>
 
-                                {/* @ DO INSTAGRAM */}
                                 <div className="flex flex-col">
-                                    <label className="font-bold uppercase tracking-wide text-sm mb-2">@ DO INSTAGRAM</label>
+                                    <label className="font-bold uppercase tracking-wide text-xs mb-2">@ DO INSTAGRAM</label>
                                     <input
                                         type="text"
                                         required
                                         placeholder="@USUARIO"
                                         value={formData.instagram}
                                         onChange={(e) => setFormData({ ...formData, instagram: e.target.value })}
-                                        className="h-14 py-4 px-5 border-2 border-black rounded-none font-archivo text-lg focus:outline-none focus:border-hyper-lime focus:ring-1 focus:ring-hyper-lime"
+                                        className="h-14 py-4 px-5 border-2 border-black rounded-none font-mono font-bold text-lg outline-none focus:border-[#CCFF00] focus:shadow-[4px_4px_0px_black] transition-all"
                                     />
                                 </div>
 
-                                {/* @ DO TIKTOK */}
                                 <div className="flex flex-col">
-                                    <label className="font-bold uppercase tracking-wide text-sm mb-2 text-black/60">@ DO TIKTOK <span className="text-[10px] opacity-70">(OPCIONAL)</span></label>
+                                    <label className="font-bold uppercase tracking-wide text-xs mb-2 text-black/60">@ DO TIKTOK <span className="text-[10px] opacity-70">(OPCIONAL)</span></label>
                                     <input
                                         type="text"
                                         placeholder="@USUARIO"
                                         value={formData.tiktok}
                                         onChange={(e) => setFormData({ ...formData, tiktok: e.target.value })}
-                                        className="h-14 py-4 px-5 border-2 border-black rounded-none font-archivo text-lg focus:outline-none focus:border-hyper-lime focus:ring-1 focus:ring-hyper-lime"
+                                        className="h-14 py-4 px-5 border-2 border-black rounded-none font-mono font-bold text-lg outline-none focus:border-[#CCFF00] focus:shadow-[4px_4px_0px_black] transition-all"
                                     />
                                 </div>
 
+                                {/* Part 2: Disabled Button (Caution Tape) */}
                                 <button
                                     type="submit"
                                     disabled={!isFormValid}
-                                    className="w-full bg-black text-white py-6 md:py-8 font-archivo text-2xl uppercase flex items-center justify-center gap-4 group hover:bg-hyper-lime hover:text-black transition-all border-4 border-black disabled:opacity-30 mt-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] active:translate-x-1 active:translate-y-1 active:shadow-none"
+                                    style={!isFormValid ? {
+                                        backgroundImage: 'repeating-linear-gradient(45deg, #e5e5e5, #e5e5e5 10px, #d4d4d4 10px, #d4d4d4 20px)'
+                                    } : {}}
+                                    className={`w-full py-6 md:py-8 font-archivo font-black text-2xl uppercase flex items-center justify-center gap-4 transition-all border-4 border-black mt-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] active:translate-x-1 active:translate-y-1 active:shadow-none ${isFormValid
+                                        ? "bg-black text-white hover:bg-hyper-lime hover:text-black group"
+                                        : "text-neutral-500 cursor-not-allowed opacity-80"
+                                        }`}
                                 >
-                                    ENVIAR APLICAÇÃO <ArrowRight className="group-hover:translate-x-3 transition-transform" />
+                                    {isFormValid ? (
+                                        <>ENVIAR APLICAÇÃO <ArrowRight className="group-hover:translate-x-3 transition-transform" /></>
+                                    ) : (
+                                        <div className="flex items-center gap-2">
+                                            <span>BLOQUEADO</span>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth="3"
+                                                strokeLinecap="square"
+                                                strokeLinejoin="miter"
+                                                className="w-6 h-6 text-neutral-500"
+                                            >
+                                                <rect x="3" y="11" width="18" height="11" rx="0" ry="0"></rect>
+                                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                            </svg>
+                                        </div>
+                                    )}
                                 </button>
                             </form>
                         </div>
