@@ -207,7 +207,7 @@ const HypeQualifier: React.FC<HypeQualifierProps> = ({ isOpen, onClose }) => {
                     ) : (
                         <div className="flex flex-col gap-8 md:gap-10">
                             <div className="space-y-3 text-center md:text-left">
-                                <h1 className="text-4xl md:text-5xl font-archivo leading-[0.9] uppercase tracking-tighter font-black italic">
+                                <h1 className="text-5xl md:text-6xl font-archivo leading-[0.9] uppercase tracking-tighter font-black italic">
                                     ENTRAR NO <span className="bg-hyper-lime px-2 border-2 border-black">JOGO</span>
                                 </h1>
                                 <p className="font-mono text-xs md:text-sm uppercase font-bold opacity-60 tracking-wider">

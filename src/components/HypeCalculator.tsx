@@ -8,7 +8,7 @@ interface HypeCalculatorProps {
 
 const HypeCalculator: React.FC<HypeCalculatorProps> = ({ onOpenModal }) => {
     return (
-        <section className="bg-black py-32 md:py-48 px-4 font-space relative overflow-hidden">
+        <section className="bg-black py-16 md:py-24 px-6 font-space relative overflow-hidden border-t-8 border-white/10">
             <div className="max-w-7xl mx-auto relative z-10">
 
                 {/* 1. SECTION HEADLINE */}
@@ -17,7 +17,7 @@ const HypeCalculator: React.FC<HypeCalculatorProps> = ({ onOpenModal }) => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl sm:text-6xl md:text-8xl font-black font-archivo text-white uppercase italic tracking-tighter"
+                        className="text-5xl md:text-8xl font-black font-archivo text-white uppercase italic tracking-tighter"
                     >
                         A MATEMÁTICA <br className="md:hidden" />
                         NÃO MENTE.
@@ -27,10 +27,10 @@ const HypeCalculator: React.FC<HypeCalculatorProps> = ({ onOpenModal }) => {
                 {/* 2. LAYOUT STRUCTURE (Two Columns + Center VS) */}
                 <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-                    {/* --- CENTER "VS" BADGE (Desktop Only) --- */}
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 hidden lg:flex items-center justify-center pointer-events-none">
-                        <div className="w-20 h-20 bg-white border-[6px] border-black rounded-full flex items-center justify-center shadow-[0_0_0_10px_black]">
-                            <span className="font-archivo font-black text-2xl text-black">VS</span>
+                    {/* --- CENTER "VS" BADGE --- */}
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex items-center justify-center pointer-events-none">
+                        <div className="w-16 h-16 md:w-20 md:h-20 bg-white border-[6px] border-black rounded-full flex items-center justify-center shadow-[0_0_0_8px_black]">
+                            <span className="font-archivo font-black text-xl md:text-2xl text-black">VS</span>
                         </div>
                     </div>
 

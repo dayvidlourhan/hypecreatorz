@@ -43,7 +43,7 @@ export default function Obrigado() {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="w-full max-w-4xl z-10 flex flex-col items-center"
             >
-                <h1 className="text-4xl md:text-7xl font-bold uppercase tracking-tighter text-center leading-tight mb-4">
+                <h1 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter text-center leading-tight mb-4 italic">
                     BEM-VINDO(A) AO JOGO, <br className="md:hidden" />
                     <span className="text-[#CCFF00]">{userName}.</span>
                 </h1>

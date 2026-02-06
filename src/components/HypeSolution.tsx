@@ -25,7 +25,7 @@ const HypeSolution: React.FC = () => {
     ];
 
     return (
-        <section className="relative py-20 md:py-32 px-4 md:px-12 bg-bone border-t-[6px] border-black overflow-hidden font-space">
+        <section className="relative py-16 md:py-24 px-6 md:px-12 bg-bone border-t-[6px] border-black overflow-hidden font-space">
             {/* Background Decorative Element */}
             <div className="absolute top-0 left-0 w-full h-full bg-dots opacity-10 pointer-events-none -z-10" />
 
@@ -37,7 +37,7 @@ const HypeSolution: React.FC = () => {
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl sm:text-5xl md:text-9xl font-archivo leading-[0.8] md:leading-[0.75] mb-6 uppercase"
+                            className="text-5xl md:text-8xl lg:text-9xl font-archivo leading-[0.8] md:leading-[0.75] mb-6 uppercase"
                         >
                             NÓS SOMOS<br />
                             <span className="text-white bg-black px-4 py-2 inline-block mt-4 border-[6px] border-black shadow-[6px_6px_0px_#6600FF] md:shadow-[10px_10px_0px_#6600FF]">O HYPE.</span>
@@ -75,7 +75,7 @@ const HypeSolution: React.FC = () => {
                 </div>
 
                 {/* The "Machine" / Assembly Line Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 relative">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 relative">
                     {/* BEEFED UP SVG Arrows for Desktop */}
                     <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
                         {/* ... (SVG path remains same) */}

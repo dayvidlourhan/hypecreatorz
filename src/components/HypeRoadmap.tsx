@@ -51,7 +51,7 @@ const RoadmapStep = ({ phase, title, text, icon: Icon, accentColor, isLeft, badg
 
 const HypeRoadmap = () => {
     return (
-        <section className="relative py-16 md:py-32 px-4 bg-bone overflow-hidden min-h-screen">
+        <section className="relative py-16 md:py-32 px-6 bg-bone overflow-hidden min-h-screen">
             {/* Background Grid Pattern */}
             <div className="absolute inset-0 bg-dots opacity-40 pointer-events-none" />
 
@@ -60,7 +60,7 @@ const HypeRoadmap = () => {
                 <div className="inline-block bg-black text-white px-4 md:px-6 py-1 md:py-2 border-4 border-black font-space font-black mb-6 md:mb-8 rotate-[-1deg] uppercase tracking-tighter shadow-brutal text-sm md:text-base">
                     O CAMINHO DO PRODUTOR
                 </div>
-                <h2 className="text-4xl sm:text-6xl md:text-9xl font-archivo leading-[0.8] mb-6 md:mb-8 tracking-tighter uppercase">
+                <h2 className="text-5xl md:text-8xl lg:text-9xl font-archivo leading-[0.8] mb-6 md:mb-8 tracking-tighter uppercase">
                     COMO <br />
                     <span className="text-white [text-shadow:2px_2px_0px_#000,-2px_-2px_0px_#000,2px_-2px_0px_#000,-2px_2px_0px_#000] md:[text-shadow:4px_4px_0px_#000,-4px_-4px_0px_#000,4px_-4px_0px_#000,-4px_4px_0px_#000] bg-hyper-lime px-3 md:px-4 py-1 md:py-2 border-4 border-black inline-block -rotate-2">
                         FUNCIONA.

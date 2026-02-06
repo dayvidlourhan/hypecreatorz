@@ -74,7 +74,7 @@ const HypeFAQ: React.FC<HypeFAQProps> = ({ onOpenModal }) => {
 
             <div className="max-w-6xl mx-auto relative z-10">
                 <div className="mb-12 md:mb-16">
-                    <h2 className="font-archivo text-4xl sm:text-6xl md:text-8xl lg:text-9xl mb-4 leading-none text-black uppercase italic">
+                    <h2 className="font-archivo text-5xl md:text-8xl lg:text-9xl mb-4 leading-none text-black uppercase italic">
                         PERGUNTAS DIFÍCEIS.
                     </h2>
                     <p className="font-space text-lg md:text-2xl font-bold bg-black text-white inline-block px-4 py-1 uppercase italic">

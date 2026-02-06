@@ -79,7 +79,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                 </motion.div>
 
                 {/* Left Content */}
-                <div className="flex-1 p-6 md:p-12 lg:p-20 border-r-0 lg:border-r-4 border-black flex flex-col justify-center gap-6 md:gap-8 relative z-10">
+                <div className="flex-1 px-6 py-12 md:px-12 md:py-16 lg:px-24 lg:py-20 border-r-0 lg:border-r-4 border-black flex flex-col justify-center gap-6 md:gap-8 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -91,7 +91,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                     </motion.div>
 
                     <motion.h1
-                        className="text-4xl sm:text-5xl md:text-8xl leading-[0.9] font-archivo"
+                        className="text-5xl md:text-8xl leading-[0.9] font-archivo"
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
@@ -129,7 +129,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                 </div>
 
                 {/* Right Visual (Asymmetric / Dashboard Card) */}
-                <div className="flex-1 bg-white/50 relative overflow-hidden flex items-center justify-center p-6 md:p-12 lg:p-20 bg-dots border-t-4 border-black lg:border-t-0">
+                <div className="flex-1 bg-white/50 relative overflow-hidden flex items-center justify-center px-6 py-12 md:px-12 md:py-16 lg:px-24 lg:py-20 bg-dots border-t-4 border-black lg:border-t-0">
                     <div className="relative w-full max-w-[450px]">
 
                         {/* Stacking Effect - Background Cards - Scaled down for mobile */}

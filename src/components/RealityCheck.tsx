@@ -8,7 +8,7 @@ interface RealityCheckProps {
 
 const RealityCheck: React.FC<RealityCheckProps> = ({ onOpenModal }) => {
     return (
-        <section id="modelo" className="relative py-12 md:py-20 px-4 md:px-12 bg-bone border-t-4 border-black overflow-hidden selection:bg-black selection:text-hyper-lime">
+        <section id="modelo" className="relative py-16 md:py-24 px-6 md:px-12 bg-bone border-t-8 border-black overflow-hidden selection:bg-black selection:text-hyper-lime">
             {/* Background Accent - Fragmented Geometry */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-hyper-lime/5 -rotate-45 translate-x-48 -translate-y-48 border-b-8 border-l-8 border-black -z-10" />
 
@@ -28,7 +28,7 @@ const RealityCheck: React.FC<RealityCheckProps> = ({ onOpenModal }) => {
                         initial={{ opacity: 0, y: 50, skewX: -5 }}
                         whileInView={{ opacity: 1, y: 0, skewX: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl sm:text-5xl md:text-[10rem] font-archivo leading-[0.8] md:leading-[0.75] tracking-[-0.06em] uppercase italic"
+                        className="text-5xl md:text-8xl lg:text-[10rem] font-archivo leading-[0.8] md:leading-[0.75] tracking-[-0.06em] uppercase italic"
                     >
                         O MODELO<br /> FALIU.
                     </motion.h2>
@@ -49,9 +49,9 @@ const RealityCheck: React.FC<RealityCheckProps> = ({ onOpenModal }) => {
                     93% dos creators relatam burnout. <span className="bg-black text-[#CCFF00] px-2 py-1 box-decoration-clone shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]">65% se sentem mal pagos.</span> Todo mês você volta para a estaca zero negociando post.
                 </motion.p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-0 items-center relative">
-                    {/* VS Badge - Hard Shadow */}
-                    <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-40 w-28 h-28 bg-white border-4 border-black rounded-full items-center justify-center font-archivo text-5xl shadow-[4px_4px_0px_#000] rotate-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-0 items-center relative">
+                    {/* VS Badge - Hard Shadow - Now visible on mobile between cards */}
+                    <div className="flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-40 w-20 h-20 md:w-28 md:h-28 bg-white border-4 border-black rounded-full items-center justify-center font-archivo text-3xl md:text-5xl shadow-[4px_4px_0px_#000] rotate-12">
                         VS
                     </div>
 

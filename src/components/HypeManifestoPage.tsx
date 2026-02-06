@@ -12,29 +12,29 @@ const HypeManifestoPage: React.FC<HypeManifestoPageProps> = ({ onOpenModal }) =>
         <div className="min-h-screen bg-black text-white font-space selection:bg-[#CCFF00] selection:text-black">
 
             {/* STICKY NAVIGATION (HEADER) - PURE NEOBRUTALISM */}
-            <nav className="fixed top-0 w-full z-[100] border-b-4 border-black bg-white px-4 md:px-10 py-4 flex items-center justify-between shadow-[0px_8px_0px_0px_rgba(204,255,0,1)]">
+            <nav className="fixed top-0 w-full z-[100] border-b-4 border-black bg-white px-4 md:px-10 py-3 md:py-4 flex items-center justify-between shadow-[0px_8px_0px_0px_rgba(204,255,0,1)]">
                 <Link
                     to="/"
-                    className="flex items-center gap-2 font-archivo text-xs md:text-sm font-black text-black hover:text-neutral-600 transition-colors group uppercase italic"
+                    className="flex items-center gap-2 font-archivo text-[10px] md:text-sm font-black text-black hover:text-neutral-600 transition-colors group uppercase italic"
                 >
-                    <ArrowLeft size={24} strokeWidth={4} className="group-hover:-translate-x-2 transition-transform" /> VOLTAR PARA A BASE
+                    <ArrowLeft size={20} strokeWidth={4} className="group-hover:-translate-x-2 transition-transform md:w-6 md:h-6" /> VOLTAR
                 </Link>
-                <div className="font-archivo text-lg md:text-xl tracking-tighter bg-black text-[#CCFF00] px-3 py-1 border-2 border-black transform -rotate-1 shadow-[4px_4px_0px_0px_#CCFF00]">
-                    MANIFESTO OFICIAL
+                <div className="font-archivo text-base md:text-xl tracking-tighter bg-black text-[#CCFF00] px-3 py-1 border-2 border-black transform -rotate-1 shadow-[4px_4px_0px_0px_#CCFF00]">
+                    MANIFESTO
                 </div>
             </nav>
 
             <main className="pt-32 pb-20">
 
                 {/* SESSÃO 1: O CHOQUE (HERO) */}
-                <section className="px-4 md:px-10 mb-24 md:mb-40 max-w-7xl mx-auto">
+                <section className="px-6 md:px-10 py-16 md:py-24 mb-24 md:mb-40 max-w-7xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         className="text-center"
                     >
-                        <h1 className="text-5xl sm:text-7xl md:text-[9rem] font-archivo font-black leading-[0.85] tracking-tighter uppercase mb-8 italic">
+                        <h1 className="text-5xl md:text-8xl lg:text-[9rem] font-archivo font-black leading-[0.85] tracking-tighter uppercase mb-8 italic">
                             PUBLI NÃO <br />
                             CONSTRÓI <br />
                             <span className="text-black bg-[#CCFF00] px-4 inline-block transform -rotate-1">PATRIMÔNIO.</span>
@@ -123,7 +123,7 @@ const HypeManifestoPage: React.FC<HypeManifestoPageProps> = ({ onOpenModal }) =>
                             viewport={{ once: true }}
                             className="bg-black text-[#CCFF00] border-4 border-[#CCFF00] p-8 md:p-16 transform rotate-2 z-30 relative md:ml-20 shadow-[12px_12px_0px_0px_#FFF] max-w-fit"
                         >
-                            <h2 className="text-5xl md:text-9xl font-archivo font-black uppercase italic leading-[0.8] tracking-tighter">
+                            <h2 className="text-5xl md:text-8xl lg:text-[9rem] font-archivo font-black uppercase italic leading-[0.8] tracking-tighter">
                                 A HYPE <br /> CREATORZ.
                             </h2>
                         </motion.div>
@@ -268,10 +268,10 @@ const HypeManifestoPage: React.FC<HypeManifestoPageProps> = ({ onOpenModal }) =>
                 </section>
 
                 {/* SESSÃO 8: O ULTIMATO (CTA FINAL) */}
-                <section className="px-4 md:px-10 max-w-7xl mx-auto text-center">
+                <section className="px-6 md:px-10 py-16 md:py-24 max-w-7xl mx-auto text-center">
                     <div className="mb-12">
                         <h5 className="text-2xl md:text-4xl font-archivo font-black uppercase italic tracking-tighter mb-2">MAIS QUE UM MOVIMENTO.</h5>
-                        <div className="text-[#CCFF00] font-archivo font-black text-6xl md:text-[10rem] italic uppercase leading-[0.8]">É O HYPE.</div>
+                        <div className="text-[#CCFF00] font-archivo font-black text-6xl md:text-8xl lg:text-[10rem] italic uppercase leading-[0.8]">É O HYPE.</div>
                     </div>
 
                     <motion.button
