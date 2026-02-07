@@ -82,20 +82,30 @@ const HypeFooter: React.FC<HypeFooterProps> = ({ onOpenModal }) => {
 
                 {/* RIGHT COLUMN: THE MASSIVE NETWORK LINKS */}
                 <div className="p-8 md:p-16 flex flex-col justify-center gap-6 bg-neutral-900/20">
-                    {["INSTAGRAM", "WHATSAPP"].map((item) => (
-                        <a
-                            key={item}
-                            href="#"
-                            className="group flex items-center gap-4 text-white hover:text-hyper-lime transition-colors duration-200"
-                        >
-                            <span className="font-archivo font-black text-4xl md:text-7xl uppercase tracking-tighter break-words italic">
-                                {item}
-                            </span>
-                            <ArrowRight
-                                className="w-12 h-12 md:w-16 md:h-16 transform -rotate-45 group-hover:rotate-0 group-hover:text-hyper-lime transition-all duration-300 opacity-50 group-hover:opacity-100"
-                            />
-                        </a>
-                    ))}
+                    <a
+                        href="https://www.instagram.com/hypecreatorz_/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-4 text-white hover:text-hyper-lime transition-colors duration-200"
+                    >
+                        <span className="font-archivo font-black text-4xl md:text-7xl uppercase tracking-tighter break-words italic">
+                            INSTAGRAM
+                        </span>
+                        <ArrowRight
+                            className="w-12 h-12 md:w-16 md:h-16 transform -rotate-45 group-hover:rotate-0 group-hover:text-hyper-lime transition-all duration-300 opacity-50 group-hover:opacity-100"
+                        />
+                    </a>
+                    <a
+                        href="#"
+                        className="group flex items-center gap-4 text-white hover:text-hyper-lime transition-colors duration-200"
+                    >
+                        <span className="font-archivo font-black text-4xl md:text-7xl uppercase tracking-tighter break-words italic">
+                            WHATSAPP
+                        </span>
+                        <ArrowRight
+                            className="w-12 h-12 md:w-16 md:h-16 transform -rotate-45 group-hover:rotate-0 group-hover:text-hyper-lime transition-all duration-300 opacity-50 group-hover:opacity-100"
+                        />
+                    </a>
 
                     <div className="mt-8 border-t border-white/20 pt-8 flex flex-wrap gap-12">
                         <Link to="/manifesto" className="font-archivo text-xl md:text-2xl text-white hover:text-hyper-lime uppercase tracking-tighter italic transition-colors">

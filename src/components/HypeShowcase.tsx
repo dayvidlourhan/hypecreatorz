@@ -8,6 +8,7 @@ interface WindowProps {
     footerText: string;
     className?: string;
     icon: React.ReactNode;
+    image?: string;
 }
 
 const Window: React.FC<WindowProps> = ({
@@ -16,7 +17,8 @@ const Window: React.FC<WindowProps> = ({
     textColor,
     footerText,
     className = "",
-    icon
+    icon,
+    image
 }) => {
     return (
         <div className={`
@@ -55,27 +57,39 @@ const Window: React.FC<WindowProps> = ({
                         backgroundSize: '12px 12px'
                     }} />
 
-                    {/* Animated Scanline */}
-                    <div className="absolute inset-0 w-full h-[3px] bg-black/10 z-10 animate-scanline pointer-events-none" />
+                    {/* Image or Icon Content */}
+                    {image ? (
+                        <div className="absolute inset-0 w-full h-full">
+                            <img
+                                src={image}
+                                alt={title}
+                                className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] group-hover/visual:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                    ) : (
+                        <div className="relative z-20 flex flex-col items-center gap-4">
+                            <div className="p-3 md:p-4 bg-white border-4 border-black shadow-[4px_4px_0px_0px_#000] group-hover/visual:scale-110 group-hover/visual:rotate-3 transition-transform duration-500">
+                                {icon}
+                            </div>
+                        </div>
+                    )}
 
-                    {/* Centered Icon Content */}
-                    <div className="relative z-20 flex flex-col items-center gap-4">
-                        <div className="p-3 md:p-4 bg-white border-4 border-black shadow-[4px_4px_0px_0px_#000] group-hover/visual:scale-110 group-hover/visual:rotate-3 transition-transform duration-500">
-                            {icon}
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Loader2 size={12} className="animate-spin text-black/40" />
-                            <span className="font-space text-[10px] md:text-xs font-bold text-black/60 uppercase tracking-widest">
-                                LOADING_ASSETS...
-                            </span>
-                        </div>
+                    {/* Animated Scanline Overlay */}
+                    <div className="absolute inset-0 w-full h-[3px] bg-black/10 z-30 animate-scanline pointer-events-none" />
+
+                    {/* Loading Overlay (Bottom Right) */}
+                    <div className="absolute bottom-3 right-3 z-40 bg-white/90 border-2 border-black px-2 py-1 flex items-center gap-2">
+                        <Loader2 size={10} className="animate-spin text-black" />
+                        <span className="font-space text-[8px] font-bold text-black uppercase tracking-widest">
+                            SYS_SYNC
+                        </span>
                     </div>
 
                     {/* Glitch Overlay on Hover */}
-                    <div className="absolute inset-0 bg-black/0 group-hover/visual:bg-black/5 transition-colors pointer-events-none" />
+                    <div className="absolute inset-0 bg-black/0 group-hover/visual:bg-black/5 z-20 transition-colors pointer-events-none" />
                 </div>
 
-                {/* Footer Text - Updated Typography */}
+                {/* Footer Text */}
                 <p className="font-space text-xs md:text-sm font-bold uppercase text-black leading-tight tracking-tight">
                     {footerText}
                 </p>
@@ -113,38 +127,41 @@ export const HypeShowcase: React.FC = () => {
                 </div>
 
                 {/* Dense Stacked Desktop View / Standard Mobile Column */}
-                <div className="flex flex-col lg:block relative min-h-auto lg:min-h-[850px] space-y-12 lg:space-y-0">
+                <div className="flex flex-col lg:block relative min-h-auto lg:min-h-[950px] space-y-12 lg:space-y-0">
 
                     {/* WINDOW 1: INFOPRODUTO */}
-                    <div className="relative lg:absolute lg:top-0 lg:left-6 w-full lg:w-[480px] xl:w-[540px] rotate-0 lg:rotate-[-3deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-20">
+                    <div className="relative lg:absolute lg:top-0 lg:left-0 w-full lg:w-[450px] xl:w-[520px] rotate-0 lg:rotate-[-3deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-10">
                         <Window
                             title="COMMUNITY_V1.exe"
                             headerColor="#6600FF"
                             textColor="text-white"
                             footerText="Comunidades Premium & Mentorias."
                             icon={<Users className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={3} />}
+                            image="/showcase-community.png"
                         />
                     </div>
 
                     {/* WINDOW 3: TECH/APPS */}
-                    <div className="relative lg:absolute lg:top-32 lg:right-6 w-full lg:w-[500px] xl:w-[560px] rotate-0 lg:rotate-[3deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-30">
+                    <div className="relative lg:absolute lg:top-48 lg:right-0 w-full lg:w-[450px] xl:w-[520px] rotate-0 lg:rotate-[2deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-20">
                         <Window
                             title="SAAS_LAUNCHER.bat"
                             headerColor="#000000"
                             textColor="text-white"
                             footerText="Apps, Presets & Ferramentas Digitais."
                             icon={<Cpu className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={3} />}
+                            image="/showcase-tech.png"
                         />
                     </div>
 
                     {/* WINDOW 2: FÍSICO */}
-                    <div className="relative lg:absolute lg:top-64 lg:left-1/2 lg:-translate-x-1/2 w-full lg:w-[460px] xl:w-[520px] rotate-0 lg:rotate-[2deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-40">
+                    <div className="relative lg:absolute lg:top-[420px] lg:left-1/2 lg:-translate-x-[54%] w-full lg:w-[450px] xl:w-[520px] rotate-0 lg:rotate-[-2deg] transition-all duration-300 ease-out hover:scale-105 hover:rotate-0 hover:z-50 z-30">
                         <Window
                             title="DROP_SUPPLEMENT.dmg"
                             headerColor="#CCFF00"
                             textColor="text-black"
                             footerText="Suplementos, Merch & Skincare."
                             icon={<Package className="w-8 h-8 md:w-12 md:h-12 text-black" strokeWidth={3} />}
+                            image="/showcase-physical.png"
                         />
                     </div>
 
